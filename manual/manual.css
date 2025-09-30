@@ -4,7 +4,16 @@ background: -webkit-linear-gradient(to right, #920000, #000428);
 background: linear-gradient(to right, #920000, #000428); 
 }
 header {
-    margin: 30px 0;
+  margin: 50px 0;
+  position: relative;
+}
+
+header .logo {
+  float: right;
+  width: 230px;   /* ajusta tamaño wa :v */
+  height: auto;
+  margin-top: -105px; /* opcional ccc sube/baja el logo según se vea mejor :v*/
+  border-radius: 1.5rem;
 }
 .contenido {
     padding:20px;

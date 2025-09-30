@@ -21,7 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
     foco_led: 10,
     foco_incandescente: 60,
     refrigerador: 300,
-    microondas: 800
+    microondas: 800,
+    batidora: 200,
+    aspiradora: 800,
+    secadoradepelo: 1600,
+    cafetara: 750,
+    congelador: 400,
+    plancha: 1000,
+    calentadordeaire: 1500,
+    radiograbadora: 40,
+    tostadora: 1000, 
   };
 
   // Función para calcular el precio total según kWh
