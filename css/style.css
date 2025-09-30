@@ -10,7 +10,7 @@ header {
 
 header .logo {
   float: right;
-  width: 230px;   /* ajusta tamaño wa :v */
+  width: 230px;   /* ajusta tamaño wa :v ccc*/
   height: auto;
   margin-top: -105px; /* opcional ccc sube/baja el logo según se vea mejor :v*/
   border-radius: 1.5rem;
@@ -101,4 +101,5 @@ h2 {
 .col {
   flex: 1;                 /* hace que cada columna ocupe mismo ancho */
   max-width: 600px;        /* opcional: límite para que no se estiren mucho */
+
 }
