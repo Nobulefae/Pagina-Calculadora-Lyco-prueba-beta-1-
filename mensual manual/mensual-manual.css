@@ -1,0 +1,94 @@
+body {
+    background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #920000, #000428);  
+background: linear-gradient(to right, #920000, #000428); 
+}
+header {
+    margin: 30px 0;
+}
+.contenido {
+    padding:20px;
+}
+.contenido-principal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+.presupuesto p{
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.presupuesto p span {
+    font-weight: normal;
+}
+#gastos {
+    margin-bottom: 30px;
+}
+h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    color: white;
+}
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    color:#005eb1;
+    font-size: 22px;
+    margin-bottom:30px;
+}
+.form-group{
+    padding: 5px;
+}
+
+
+/* NAVBAR :v */
+.navbar {
+  background: linear-gradient(90deg, #e9ba00, #ffbb00, #5a4200); /* degradado dorado */
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 15px;
+  border-radius: 8px;  /* esquinas redondeadas */
+  transition: background 0.3s, transform 0.3s;
+}
+
+.navbar a {
+  display: block;       /* ocupa todo el li */
+  padding: 8px 16px;    /* espacio clickable */
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+/* Efecto hover en el contenedor */
+.navbar li:hover {
+  background: rgba(255, 255, 255, 0.2); /* resalta el li */
+  transform: scale(1.05);
+}
+
+.navbar a:hover {
+  color: #000;  /* cambia el texto a negro al hacer hover */
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* centra todo el contenido en el contenedor */
+  gap: 10rem;               /* espacio entre columnas */
+}
+
+.col {
+  flex: 1;                 /* hace que cada columna ocupe mismo ancho */
+  max-width: 600px;        /* opcional: límite para que no se estiren mucho */
+}

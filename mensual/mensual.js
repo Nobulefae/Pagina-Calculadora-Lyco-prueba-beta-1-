@@ -1,0 +1,128 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const formulario = document.getElementById("agregar-gasto");
+  const selectGasto = document.getElementById("gasto");
+  const inputCantidad = document.getElementById("cantidad");
+  const lista = document.querySelector("#gastos ul");
+  const totalPre = document.getElementById("totalpre");
+  const precioTotal = document.getElementById("preciototal");
+  const tarifaSpan = document.getElementById("Tarifa");
+
+  let totalKWh = 0; // acumulador de kWh (mensual)
+
+  // Valores de potencia en watts
+  const potencias = {
+    tv_led: 40,
+    tv_plasma: 90,
+    tv_lcd: 180,
+    ventilador_pequeño: 80,
+    ventilador_grande: 120,
+    pc_escritorio: 250,
+    pc_portatil: 100,
+    foco_led: 10,
+    foco_incandescente: 60,
+    refrigerador: 300,
+    microondas: 800
+  };
+
+  // Función para calcular el precio total según kWh
+  function calcularPrecio(kWh) {
+    let precio = 0;
+
+    if (kWh < 16) {
+      precio = 13.726; // mínimo
+    } else if (kWh < 121) {
+      precio = kWh * 0.758;
+    } else if (kWh < 301) {
+      precio = kWh * 0.969;
+    } else if (kWh < 501) {
+      precio = kWh * 1.020;
+    } else if (kWh < 1001) {
+      precio = kWh * 1.068;
+    } else {
+      precio = kWh * 1.479;
+    }
+
+    return precio;
+  }
+
+  // Función para calcular la tarifa aplicada
+  function calcularTarifa(kWh) {
+    if (kWh < 16) {
+      return "El mínimo cobro a realizar es Bs. 13.726";
+    } else if (kWh < 121) {
+      return "Tarifa aplicada: Bs. 0.758 por kWh";
+    } else if (kWh < 301) {
+      return "Tarifa aplicada: Bs. 0.969 por kWh";
+    } else if (kWh < 501) {
+      return "Tarifa aplicada: Bs. 1.020 por kWh";
+    } else if (kWh < 1001) {
+      return "Tarifa aplicada: Bs. 1.068 por kWh";
+    } else {
+      return "Tarifa aplicada: Bs. 1.479 por kWh";
+    }
+  }
+
+  // Función para actualizar los totales en pantalla
+  function actualizarTotales() {
+    totalPre.textContent = totalKWh.toFixed(2) + " kWh/mes";
+    precioTotal.textContent = " — Bs " + calcularPrecio(totalKWh).toFixed(2);
+    tarifaSpan.textContent = " — " + calcularTarifa(totalKWh);
+  }
+
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault(); // evitar recarga
+
+    const seleccionado = selectGasto.value;
+    const nombre = selectGasto.options[selectGasto.selectedIndex].text;
+    const horas = parseFloat(inputCantidad.value.trim());
+
+    if (!nombre || isNaN(horas) || horas <= 0) {
+      alert("Por favor, selecciona un aparato y escribe la cantidad de horas");
+      return;
+    }
+
+    // Obtener la potencia en W
+    let potencia = potencias[seleccionado] || 0;
+
+    // Calcular kWh diario y luego multiplicar por 30 (mensual)
+    let kWh = ((potencia * horas) / 1000) * 30;
+
+    // Calcular precio para este aparato
+    let precioItem = calcularPrecio(kWh);
+
+    // Sumar al total mensual
+    totalKWh += kWh;
+
+    // Actualizar en pantalla
+    actualizarTotales();
+
+    // Crear el elemento de lista
+    const li = document.createElement("li");
+    li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+    // Texto del aparato con consumo mensual
+    li.textContent = `${nombre} — ${horas} h/día — ${potencia} W — ${kWh.toFixed(2)} kWh/mes — Bs ${precioItem.toFixed(2)}`;
+
+    // Botón eliminar
+    const btnEliminar = document.createElement("button");
+    btnEliminar.textContent = "✖";
+    btnEliminar.className = "btn btn-sm btn-danger ms-2";
+
+    // Evento para eliminar (resta el valor del total)
+    btnEliminar.addEventListener("click", () => {
+      totalKWh -= kWh;
+      actualizarTotales();
+      lista.removeChild(li);
+    });
+
+    // Agregar botón al <li>
+    li.appendChild(btnEliminar);
+
+    // Agregar <li> a la lista
+    lista.appendChild(li);
+
+    // Resetear formulario
+    selectGasto.selectedIndex = 0;
+    inputCantidad.value = "";
+  });
+});
