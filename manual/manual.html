@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto xdxd</title>
+    <link rel="stylesheet" href="manual.css" type="text/css">
+</head>
+<body>
+  <script src="manual.js" defer></script>
+      <div class="container">
+        <header>
+                <h1 class="text-center">Calculadora Lyco</h1>
+                <img src="../logowa.jpg" alt="Logo Lyco" class="logo">
+        </header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Calculo Diario</a></li>
+                <li><a href="manual.html">Calculo Diario - Manual</a></li>
+                <li><a href="../mensual/mensual.html">Calculo Mensual</a></li>
+                <li><a href="../mensual manual/mensual-manual.html">Calculo Mensual - Manual</a></li>
+            </ul>
+        </nav>
+        <section class="contenido-principal">
+            <div class="row">
+                <div class="col ">
+                    <div class="contenido primario">
+                        <h2 class="text-center">Elije tus electrodomesticos aqui</h2>
+                            <form id="agregar-gasto" action="#" class="agregar-gasto">
+                                <div class="form-group">
+                                    <label for="gasto">Electrodoméstico:</label>
+                                    <input type="text" class="form-control" id="gasto" placeholder="Escriba el nombre del aparato">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="potencia">Potencia (W):</label>
+                                    <input type="number" class="form-control" id="potencia" placeholder="Ingrese la potencia en watts">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cantidad">Cantidad de horas:</label>
+                                    <input type="number" class="form-control" id="cantidad" placeholder="Cantidad de horas de uso">
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Agregar</button>
+                                </div>
+                            </form>
+
+                        
+                    </div> <!--.contenido-->
+                </div> <!--.col-->
+
+                <div class="col">
+                    <div class="contenido secundario">
+                        
+                        <h2 class="text-center">Listado</h2>
+
+                        <div id="gastos">
+                            <ul class="list-group"></ul>
+                        </div>
+                        <div id="totalprecio" class="totalprecio">
+                            <div class="restante alert alert-success">
+                                <p>Total: <span id="totalpre"></span><span id="preciototal"></span><span id="Tarifa"></span></p>
+                            </div>
+                        </div> <!--.Total-->
+                    </div> <!--.contenido-->
+                </div><!--.col-->
+            </div> <!--.row-->
+        </section>
+      </div>
+</body>
+</html>
