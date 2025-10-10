@@ -1,0 +1,137 @@
+body {
+    background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #920000, #000428);  
+background: linear-gradient(to right, #920000, #000428); 
+}
+header {
+  margin: 50px 0;
+  position: relative;
+}
+
+header .logo {
+  float: right;
+  width: 230px;   /* ajusta tamaño wa :v */
+  height: auto;
+  margin-top: -105px; /* opcional ccc sube/baja el logo según se vea mejor :v*/
+  border-radius: 1.5rem;
+}
+.contenido {
+    padding:20px;
+}
+.contenido-principal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+.presupuesto p{
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.presupuesto p span {
+    font-weight: normal;
+}
+#gastos {
+    margin-bottom: 30px;
+}
+h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    color: white;
+}
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    color:#005eb1;
+    font-size: 22px;
+    margin-bottom:30px;
+}
+.form-group{
+    padding: 5px;
+}
+
+
+/* NAVBAR :v */
+.navbar {
+  background: linear-gradient(90deg, #e9ba00, #ffbb00, #5a4200); /* degradado dorado */
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 15px;
+  border-radius: 8px;  /* esquinas redondeadas */
+  transition: background 0.3s, transform 0.3s;
+}
+
+.navbar a {
+  display: block;       /* ocupa todo el li */
+  padding: 8px 16px;    /* espacio clickable */
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+/* Efecto hover en el contenedor */
+.navbar li:hover {
+  background: rgba(255, 255, 255, 0.2); /* resalta el li */
+  transform: scale(1.05);
+}
+
+.navbar a:hover {
+  color: #000;  /* cambia el texto a negro al hacer hover */
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* más pequeño por defecto */
+  flex-wrap: wrap; /* permite que se acomoden en varias líneas */
+}
+
+.col {
+  flex: 1 1 100%;   /* que se adapte al ancho disponible */
+  max-width: 100%;  /* en móvil ocupa todo */
+}
+
+/* --- RESPONSIVE --- */
+@media (min-width: 768px) {
+  .row {
+    flex-wrap: nowrap;   /* en pantallas grandes, vuelven a estar lado a lado */
+    gap: 5rem;
+  }
+
+  .col {
+    flex: 1;
+    max-width: 600px; /* límite solo en desktop */
+  }
+}
+
+header .logo {
+  float: right;
+  width: 230px;   /* más pequeño en responsive */
+  height: auto;
+  margin-top: -105px;
+}
+
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+  }
+
+  header .logo {
+    float: none;
+    display: block;
+    margin: 10px auto 0 auto; /* centrado debajo del título */
+    width: 120px; /* ajusta tamaño en móvil */
+  }
+}

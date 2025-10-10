@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto xdxd</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+  <script src="java/wa.js" defer></script>
+      <div class="container">
+        <header>
+                <h1 class="text-center">Calculadora Lyco</h1>
+                <img src="logowa.jpg" alt="Logo Lyco" class="logo">
+        </header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Calculo Diario</a></li>
+                <li><a href="manual/manual.html">Calculo Diario - Manual</a></li>
+                <li><a href="mensual/mensual.html">Calculo Mensual</a></li>
+                <li><a href="mensual manual/mensual-manual.html">Calculo Mensual - Manual</a></li>
+            </ul>
+        </nav>
+        <section class="contenido-principal">
+            <div class="row">
+                <div class="col ">
+                    <div class="contenido primario">
+                        <h2 class="text-center">Elige tus electrodomesticos aqui</h2>
+                            <form id="agregar-gasto" action="#" class="agregar-gasto">
+                                <div class="form-group">
+                                    <label for="gasto">Electrodoméstico:</label>
+                                    <select id="gasto">
+                                        <option value="" disabled selected>Seleccione un aparato</option>
+                                        
+                                        <option value="aire_acondicionado">Aire acondicionado</option>
+                                        <option value="aspiradora">Aspiradora</option>
+                                        <option value="batidora">Batidora</option>
+                                        <option value="cafetara">Cafetera</option>
+                                        <option value="calentadordeaire">Calentador de Aire</option>
+                                        <option value="consola">Consola de videojuegos</option>
+                                        <option value="congelador">Congelador</option>
+                                        <option value="foco_incandescente">Foco Incandescente</option>
+                                        <option value="foco_led">Foco LED</option>
+                                        <option value="horno_electrico">Horno eléctrico</option>
+                                        <option value="lavadora">Lavadora</option>
+                                        <option value="laptop">Laptop</option>
+                                        <option value="microondas">Microondas</option>
+                                        <option value="pc_escritorio">Computadora de Escritorio</option>
+                                        <option value="plancha">Plancha</option>
+                                        <option value="radiograbadora">Radio grabadora</option>
+                                        <option value="refrigerador">Refrigerador</option>
+                                        <option value="router">Router WiFi</option>
+                                        <option value="secadoradepelo">Secadora de pelo</option>
+                                        <option value="televisor_led">Televisor 24''</option>
+                                        <option value="televisor_plasma">Televisor 32''</option>
+                                        <option value="televisor_lcd">Televisor 42''</option>
+                                        <option value="tostadora">Tostadora</option>
+                                        <option value="ventilador_grande">Ventilador Grande</option>
+                                        <option value="ventilador_pequeño">Ventilador Pequeño</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cantidad">Horas de consumo:</label>
+                                    <input type="number" class="form-control" id="cantidad" placeholder="Cantidad de horas de uso" min="1" max="24">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Agregar</button>
+                                </div>
+                                
+                            </form>
+                        
+                    </div> <!--.contenido-->
+                </div> <!--.col-->
+
+                <div class="col">
+                    <div class="contenido secundario">
+                        
+                        <h2 class="text-center">Listado</h2>
+
+                        <div id="gastos">
+                            <ul class="list-group"></ul>
+                        </div>
+                        <div id="totalprecio" class="totalprecio">
+                            <div class="restante alert alert-success">
+                                <p>Total: <span id="totalpre"></span><span id="preciototal"></span><span id="Tarifa"></span></p>
+                            </div>
+                        </div> <!--.Total-->
+                    </div> <!--.contenido-->
+                </div><!--.col-->
+            </div> <!--.row-->
+        </section>
+      </div>
+</body>
+</html>
